@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بورتفوليو مصمم جرافيك | تصميم لوجو وسوشيال ميديا</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3a86ff;
+            --secondary-color: #ff006e;
+            --accent-color: #8338ec;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        /* التصميم العام */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* الشريط العلوي */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .img_logo{
+            width: 70px;
+            border: 0px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* قسم الهيرو */
+        .hero {
+            padding: 150px 0 100px;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #555;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* قسم الأعمال */
+        .portfolio {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-size: 1.5rem;
+        }
+
+        .portfolio-img_1{
+            width: 100%;
+            height: 600px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-size: 1.5rem;
+        }
+        
+        .portfolio-info {
+            padding: 20px;
+            background: white;
+        }
+        
+        .portfolio-info h3 {
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .portfolio-info p {
+            color: #777;
+        }
+        
+        /* قسم الخدمات */
+        .services {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        /* قسم عني */
+        .about {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-img {
+            background-color: #ddd;
+            height: 400px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-size: 1.5rem;
+        }
+        
+        .about-text h2 {
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        /* قسم التواصل */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(58, 134, 255, 0.2);
+        }
+        
+        /* الفوتر */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin-bottom: 30px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin: 0 15px;
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        .the_my{
+            display: flex;
+
+        }
+
+        
+        /* responsive design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .portfolio-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .portfolio-img_1{
+                width: 400px;
+                padding: 70px;
+            }
+.about-text{
+    padding: 50px 0px 0px 0px;
+
+}
+.section-title{
+    top: -90px;
+}
+        }
+    </style>
+</head>
+<body>
+    <!-- الشريط العلوي -->
+    <header>
+        <div class="container" id="home">
+            <nav>
+                <a href="#" class="logo"><img class="img_logo" src="braanmd_preview_rev_2.png" alt=""></a>
+                <ul class="nav-links">
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#portfolio">أعمالي</a></li>
+                    <li><a href="#services">خدماتي</a></li>
+                    <li><a href="#about">عني</a></li>
+                    <li><a href="#tt">تواصل معي</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- قسم الهيرو -->
+    <section class="hero">
+        <div class="container">
+            <h1>إبداع بصري يلهم العالم</h1>
+            <p>مصمم جرافيك محترف متخصص في تصميم الشعارات والهويات البصرية والتصميمات الإبداعية لوسائل التواصل الاجتماعي</p>
+            <a href="#portfolio" class="btn">أعرض أعمالي</a>
+        </div>
+    </section>
+
+    <!-- قسم الأعمال -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">معرض أعمالي</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div ><img class="portfolio-img" src="margona@.png" alt=""></div>
+                </div>
+                <div class="portfolio-item">
+                    <div> <img class="portfolio-img" src="momo______club1.png" alt=""></div>
+                </div>
+                <div class="portfolio-item">
+                     <div> <img class="portfolio-img" src="صورة واتساب بتاريخ 1447-01-25 في 22.25.18_a395a1cd.jpg"  alt=""></div>
+                </div>
+                <div class="portfolio-item">
+                    
+                     <div> <img class="portfolio-img" src="صورة واتساب بتاريخ 1447-01-29 في 14.17.08_e08ff074.jpg"  alt=""></div>
+                </div>
+                <div class="portfolio-item">
+                    <div> <img class="portfolio-img" src="صورة واتساب بتاريخ 1447-02-02 في 03.29.53_91cc3440.jpg" alt=""></div>
+                </div>
+                <div class="portfolio-item">
+                    <div> <img class="portfolio-img" src="صورة واتساب بتاريخ 1447-02-22 في 23.34.24_200f3bb5.jpg" alt=""></div>
+                </div>
+                                <div class="portfolio-item">
+                    <div> <img class="portfolio-img" src="صورة واتساب بتاريخ 1447-02-22 في 23.34.24_9b9e0be7.jpg" alt=""></div>
+                </div>
+                                <div class="portfolio-item">
+                    <div> <img class="portfolio-img"  src="صورة واتساب بتاريخ 1447-02-22 في 23.34.24_fe6ad199.jpg" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الخدمات -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">خدماتي</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pencil-alt"></i>
+                    </div>
+                    <h3>تصميم الشعارات</h3>
+                    <p>تصميم شعار إبداعي يعبر عن هوية علامتك التجارية بشكل فريد</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>الهوية البصرية</h3>
+                    <p>تصميم هوية بصرية متكاملة لتعزيز حضور علامتك التجارية</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                    <h3>تصميم وسائل التواصل</h3>
+                    <p>إنشاء محتوى جذاب لوسائل التواصل الاجتماعي يناسب جمهورك</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم عني -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">عني</h2>
+            <div class="about-content">
+                <div class="about-img"><img class="portfolio-img_1" src="533076957_122138570624803830_5446861923702938753_n.jpg" alt=""></div>
+                <div class="about-text">
+                    <h2>مرحباً، أنا معاذ</h2>
+                    <p>أنا مصمم جرافيك مبدع متخصص في تصميم الشعارات والهويات البصرية والتصميمات لوسائل التواصل الاجتماعي.</p>
+                    <p>أعمل في مجال التصميم منذ أكثر من 1 سنوات، أساعد العلامات التجارية في إنشاء هوية بصرية قوية وجذابة.</p>
+                    <p>أؤمن بأن التصميم الجيد هو الذي يدمج بين الجماليات والوظيفة لتحقيق الأهداف المرجوة.</p>
+                    <a id="tt" href="https://api.whatsapp.com/send?phone=201501527888" class="btn">تواصل معي</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <p class="copyright">2025 © جميع الحقوق محفوظة | BrandScene</p>
+    </footer>
+
+    <script>
+        // كود جافاسكريبت بسيط لإضافة تأثيرات عند التمرير
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
